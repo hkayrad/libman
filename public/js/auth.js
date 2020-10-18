@@ -5,10 +5,17 @@ firebase.auth().onAuthStateChanged(function (user) {
         document.getElementById('login_div').style.display = 'none';
 
         var user = firebase.auth().currentUser;
+        var uid = user.uid
+        var username, email;
+
 
         if (user != null) {
-            var emailId = user.email;
-            document.getElementById('user_para').innerHTML = 'Welcome user:' + emailId
+            email = user.email;
+
+            if (user.displayName == null) {
+                username = email.split('@')[0];
+            }
+            document.getElementById('user_para').innerHTML = 'Logged in as ' + username;
         }
 
     } else {
