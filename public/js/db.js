@@ -1,5 +1,4 @@
 var database = firebase.database();
-var user = firebase.auth().currentUser;
 
 function writeData(uID, bookName, bookWriter, shelfIndex) {
 
@@ -18,14 +17,32 @@ function writeData(uID, bookName, bookWriter, shelfIndex) {
         });
     });
 
+}
 
+function readBooks(uID) {
+    return database.ref('/bookcases/' + uID /* 'uid' */ + '/shelves/').once('value').then(function (snapshot) {
+        var shelves = snapshot.val();
+        shelfArrLen = shelves.length - 1;
+
+        for (var i = 1; i <= shelfArrLen; i++) {
+            console.log(shelves[i]);
+            booksList = shelves[i].books
+        }
+    });
 }
 
 function addBook() {
+    var user = firebase.auth().currentUser;
     var uid = user.uid;
-    var bName = document.getElementById('bName');
-    var bWriter = document.getElementById('bWriter');
-    var shIndex = document.getElementById('shIndex');
+    var bName = document.getElementById('bName').value;
+    var bWriter = document.getElementById('bWriter').value;
+    var shIndex = document.getElementById('shIndex').value;
 
+    writeData(uid, bName, bWriter, shIndex);
+}
 
+function seeBooks() {
+    var user = firebase.auth().currentUser;
+    var uid = user.uid;
+    readBooks(uid);
 }

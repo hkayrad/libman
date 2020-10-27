@@ -5,6 +5,58 @@ body {
   margin: 0px;
   font-size: 16px;
   font-family: Raleway;
+  /* .main-div,
+    .loggedin-div {
+        width: 20%;
+        margin: auto auto;
+        padding: 20px;
+        text-align: center;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+
+        button {
+            background: #5d8ffc;
+            color: #ffffff;
+            border: 1px solid #5d8ffc;
+            border-radius: 5px;
+            margin: auto;
+            padding: 15px;
+            width: 100%;
+            transition: 0.3s;
+
+            &:hover {
+                background: #fff;
+                color: #5d8ffc;
+                border: 1px solid #5d8ffc;
+                cursor: pointer;
+            }
+        }
+
+        input {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background: #fff;
+            padding: 15px;
+            width: 90%;
+            margin-bottom: 20px;
+            transition: 0.3s;
+
+            &:focus {
+                border: 1px solid #777;
+            }
+        }
+    }
+
+    .loggedin-div {
+        .toggleButtons {
+            display: flex;
+        }
+
+        #addBookSection {
+            display: none;
+        }
+    } */
 }
 
 body input,
@@ -12,47 +64,7 @@ body button {
   font-weight: 700;
 }
 
-body .main-div,
-body .loggedin-div {
-  width: 20%;
-  margin: auto auto;
-  padding: 20px;
-  text-align: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-body .main-div button,
-body .loggedin-div button {
-  background: #5d8ffc;
-  color: #ffffff;
-  border: 1px solid #5d8ffc;
-  border-radius: 5px;
-  margin: auto;
-  padding: 15px;
-  width: 100%;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-}
-
-body .main-div button:hover,
-body .loggedin-div button:hover {
-  background: #fff;
-  color: #5d8ffc;
-  border: 1px solid #5d8ffc;
-  cursor: pointer;
-}
-
-body .main-div input,
-body .loggedin-div input {
+body input.default {
   border: 1px solid #ccc;
   border-radius: 5px;
   background: #fff;
@@ -63,8 +75,164 @@ body .loggedin-div input {
   transition: 0.3s;
 }
 
-body .main-div input:focus,
-body .loggedin-div input:focus {
-  border: 1px solid #777;
+body button.default {
+  background: #5d8ffc;
+  color: #ffffff;
+  border: 1px solid #5d8ffc;
+  border-radius: 5px;
+  padding: 15px;
+  width: 90%;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+body .loginDiv {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 30vw;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  margin: auto;
+}
+
+body .loginDiv #subTitle {
+  font-size: 1.5rem;
+}
+
+body .loginDiv .loginForm {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body .loginDiv .loginForm input,
+body .loginDiv .loginForm button {
+  margin: auto auto 15px auto;
+}
+
+body .userDiv {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 30vw;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  margin: auto;
+}
+
+body .userDiv #subTitle {
+  font-size: 1.5rem;
+}
+
+body .userDiv .logoutForm {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body .userDiv .logoutForm input,
+body .userDiv .logoutForm button {
+  margin: auto auto 15px auto;
+}
+
+body .userDiv .toggleButtons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+}
+
+body .userDiv .toggleButtons .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+}
+
+body .userDiv .toggleButtons .row input,
+body .userDiv .toggleButtons .row button {
+  margin: auto auto 15px auto;
+  width: 45%;
+}
+
+body .userDiv .addBookSection {
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 30vw;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  margin: auto;
+}
+
+body .userDiv .addBookSection #subTitle {
+  font-size: 1.5rem;
+}
+
+body .userDiv .addBookSection input,
+body .userDiv .addBookSection button {
+  margin: auto auto 15px auto;
+  width: 90%;
+}
+
+body .userDiv .seeBooksSection {
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 30vw;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  margin: auto;
 }
 /*# sourceMappingURL=style.css.map */

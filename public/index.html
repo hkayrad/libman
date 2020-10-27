@@ -6,30 +6,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LibMan Demo</title>
 
+    <script src="./js/sectionToggler.js"></script>
     <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
 
-    <div id="login_div" class="main-div">
-        <h3>Firebase Web Login Example</h3>
-        <input type="email" placeholder="Email..." id="email_field" />
-        <input type="password" placeholder="Password..." id="password_field" />
-
-        <button onclick="login()">Login to Account</button>
+    <div id="loginDiv" class="loginDiv">
+        <h3 id="subTitle">Firebase Web Login Example</h3>
+        <div class="loginForm">
+            <input class="default" type="email" placeholder="Email..." id="emailField" />
+            <input class="default" type="password" placeholder="Password..." id="passwordField" />
+            <button class="default" onclick="login()">Login to Account</button>
+        </div>
     </div>
 
-    <div id="user_div" class="loggedin-div">
-        <h3>Logged in as :</h3>
-        <p id="user_para">Welcome to Firebase web Login Example. You're currently logged in.</p>
-        <button onclick="logout()">Logout</button>
-        <br>
-        <br>
-        <input type="text" placeholder="Book Name" id="bName">
-        <input type="text" placeholder="Writer" id="bWriter">
-        <input type="number" placeholder="Shelf Index" id="shIndex">
+    <div id="userDiv" class="userDiv">
+        <h3 id="subTitle">Logged in as :</h3>
+        <div class="logoutForm">
+            <p id="userPara">Welcome to Firebase web Login Example. You're currently logged in.</p>
+            <button class="default" onclick="logout()">Logout</button>
+        </div>
+        <div class="toggleButtons">
+            <div class="row">
+                <button class="default" onclick="toggleAddBook()">Add Book</button>
+                <button class="default" onclick="toggleSeeBooks()">See Your Book List</button>
+            </div>
 
-        <button onclick="addToLib()">Add Book to Library</button>
+        </div>
+        <div id="addBookSection" class="addBookSection">
+            <h3 id="subTitle">Add Book</h3>
+            <input class="default" type="text" placeholder="Book Name" id="bName">
+            <input class="default" type="text" placeholder="Writer" id="bWriter">
+            <input class="default" type="number" placeholder="Shelf Index" id="shIndex">
+
+            <button class="default" onclick="addBook()">Add Book to Library</button>
+        </div>
+
+        <div id="seeBooksSection" class="seeBooksSection">
+            <h3 id="subTitle">See Your Books</h3>
+            <button class="default" onclick="seeBooks()">See Your Books</button>
+        </div>
     </div>
 
 
@@ -62,6 +79,7 @@
     </script>
     <script src="./js/auth.js"></script>
     <script src="./js/db.js"></script>
+
 </body>
 
 </html>
