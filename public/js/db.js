@@ -39,7 +39,7 @@ function writeData(uID, bookName, bookWriter, shelfIndex) {
 
 }
 
-function readBooks(uI) {
+function readBooks(uID) {
 
     return database.ref('/bookcases/' + uID /* 'uid' */ + '/shelves/').once('value').then(function (snapshot) {
         var shelves = snapshot.val();
