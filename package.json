@@ -1,0 +1,15 @@
+{
+  "name": "libman",
+  "version": "1.0.0",
+  "description": "Free Library Management App",
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^9.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
